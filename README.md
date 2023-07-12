@@ -1,13 +1,21 @@
-# Azurevirtualdesktop
+# Cloud Endpoint
 # Azure Virtual Desktop Deployment with Terraform
 This repository contains Terraform code to deploy a complete Azure Virtual Desktop (AVD) platform. The infrastructure can be provisioned with the following components:
 
 **Workspace**: Sets up an AVD workspace, providing the foundation for managing virtual desktops and applications.
-**Desktop**: Application Group: Creates an application group within the workspace, allowing you to publish applications to users.
+
+**Desktop Application Group**: Creates an application group within the workspace, allowing you to publish applications to users. AVD User group is automatically assigned the proper roles to immediately access the Cloud Endpoint.
+
 **Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2 Entra ID edition. These virtual machines serve as the desktops for end-users.
+
+**Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune
+
 **Dedicated VNET**: Creates a dedicated virtual network (VNET) for the AVD environment, ensuring network isolation and security.
+
 **VNET Peering**: Provides an option to peer the dedicated VNET with an existing hub, enabling connectivity with other resources in your network.
+
 **KeyVault**: Sets up a KeyVault to securely store and manage the local administrator password for the AVD virtual machines.
+
 **Log Analytics Workspace**: Creates a Log Analytics workspace with the Azure Monitor Agent (AMA) extension installed, allowing you to collect and analyze logs from your AVD environment.
 
 ## Prerequisites
@@ -22,6 +30,7 @@ To deploy the AVD platform in an interactive way, follow these steps:
 
 Clone this repository to your local machine.
 Open a terminal or command prompt and navigate to the repository's root directory.
+
 Initialize Terraform by running the following command:
 **_terraform init_**
 
