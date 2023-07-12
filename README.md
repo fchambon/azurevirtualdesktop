@@ -8,7 +8,7 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 **Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2. These virtual machines serve as the desktops for end-users.
 
-**Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune
+**Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune. Session hosts also have the Azure Monitor Agent (AMA) extension installed for monitoring purposes.
 
 **Dedicated VNET**: Creates a dedicated virtual network (VNET) for the AVD environment, ensuring network isolation and security.
 
@@ -16,7 +16,7 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 **KeyVault**: Sets up a KeyVault to securely store and manage the local administrator password for the AVD virtual machines.
 
-**Log Analytics Workspace**: Creates a Log Analytics workspace with the Azure Monitor Agent (AMA) extension installed, allowing you to collect and analyze logs from your AVD environment.
+**Log Analytics Workspace**: Creates a Log Analytics workspace allowing you to collect and analyze logs from your AVD environment.
 
 ## Prerequisites
 To use this Terraform code and deploy the AVD platform, ensure you have the following:
