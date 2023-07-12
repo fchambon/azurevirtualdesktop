@@ -6,7 +6,7 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 **Desktop Application Group**: Creates an application group within the workspace, allowing you to publish applications to users. AVD User group is automatically assigned the proper roles to immediately access the Cloud Endpoint.
 
-**Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2 Entra ID edition. These virtual machines serve as the desktops for end-users.
+**Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2. These virtual machines serve as the desktops for end-users.
 
 **Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune
 
