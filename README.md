@@ -2,25 +2,25 @@
 # Azure Virtual Desktop deployment with Terraform
 This repository contains Terraform code to deploy a complete Azure Virtual Desktop (AVD) platform. The infrastructure is provisioned with the following components through an AVD module:
 
-**Workspace**: Sets up an AVD workspace, providing the foundation for managing virtual desktops and applications.
+- **Workspace**: Sets up an AVD workspace, providing the foundation for managing virtual desktops and applications.
 
-**Desktop Application Group**: Creates an application group within the workspace, allowing you to publish applications to users. AVD User group is automatically assigned the proper roles to immediately access the Cloud Endpoint.
+- **Desktop Application Group**: Creates an application group within the workspace, allowing you to publish applications to users. AVD User group is automatically assigned the proper roles to immediately access the Cloud Endpoint.
 
-**Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2. These virtual machines serve as the desktops for end-users.
+- **Host Pool**: Deploys a host pool, which consists of one or more virtual machines running Windows 11 Multisession 22H2. These virtual machines serve as the desktops for end-users.
 
-**Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune. Session hosts also have the Azure Monitor Agent (AMA) extension installed for monitoring purposes.
+- **Identity & Management**: Sessions Hosts are Microsoft Entra Id Joined and automatically registered in Microsoft Intune. Session hosts also have the Azure Monitor Agent (AMA) extension installed for monitoring purposes.
 
-**Dedicated Virtual Network**: Creates a dedicated virtual network (VNET) for the AVD environment, ensuring network isolation and security.
+- **Dedicated Virtual Network**: Creates a dedicated virtual network (VNET) for the AVD environment, ensuring network isolation and security.
 
-**VNET Peering**: Provides an option to peer the dedicated VNET with an existing hub, enabling connectivity with other resources in your network.
+- **VNET Peering**: Provides an option to peer the dedicated VNET with an existing hub, enabling connectivity with other resources in your network.
 
-**Storage**: Creates an Azure File Share to host FSlogix user profils with the proper RBAC permissions
+- **Storage**: Creates an Azure File Share to host FSlogix user profils with the proper RBAC permissions
 
-**KeyVault**: Sets up a KeyVault to securely store and manage the local administrator password for the AVD virtual machines.
+- **KeyVault**: Sets up a KeyVault to securely store and manage the local administrator password for the AVD virtual machines.
 
-**Log Analytics Workspace**: Creates a Log Analytics workspace allowing you to collect and analyze logs from your AVD environment.
+- **Log Analytics Workspace**: Creates a Log Analytics workspace allowing you to collect and analyze logs from your AVD environment.
 
-**Compute Gallery**: Creates a Compute Gallery with a Windows 11 multisession 365 Apps image definition
+- **Compute Gallery**: Creates a Compute Gallery with a Windows 11 multisession 365 Apps image definition
 
 ## Prerequisites
 To use this Terraform code and deploy the AVD platform, ensure you have the following:
