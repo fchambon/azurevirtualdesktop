@@ -1,6 +1,6 @@
 # Cloud Endpoint
 # Azure Virtual Desktop deployment with Terraform
-This repository contains Terraform code to deploy a complete Azure Virtual Desktop (AVD) platform. The infrastructure can be provisioned with the following components:
+This repository contains Terraform code to deploy a complete Azure Virtual Desktop (AVD) platform. The infrastructure is provisioned with the following components through an AVD module:
 
 **Workspace**: Sets up an AVD workspace, providing the foundation for managing virtual desktops and applications.
 
