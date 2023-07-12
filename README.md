@@ -1,0 +1,2 @@
+# azurevirtualdesktop
+AVD industrialization
