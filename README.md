@@ -1,5 +1,5 @@
 # Cloud Endpoint
-# Azure Virtual Desktop Deployment with Terraform
+# Azure Virtual Desktop deployment with Terraform
 This repository contains Terraform code to deploy a complete Azure Virtual Desktop (AVD) platform. The infrastructure can be provisioned with the following components:
 
 **Workspace**: Sets up an AVD workspace, providing the foundation for managing virtual desktops and applications.
@@ -31,22 +31,22 @@ To deploy the AVD platform in an interactive way, follow these steps:
 Clone this repository to your local machine.
 Open a terminal or command prompt and navigate to the repository's root directory.
 
--Initialize Terraform by running the following command:
+- Initialize Terraform by running the following command:
 **_terraform init_**
 
--Authenticate to Azure by running the following command and following the prompts:
+- Authenticate to Azure by running the following command and following the prompts:
 **_az login_**
 
 Modify the variables files to provide the required variables, such as your Azure AVD Users group, resource group, and other deployment-specific configurations.
 Review and customize the desired infrastructure configuration in the Terraform code, located in the .tf files.
 
--Validate the Terraform configuration by running the following command:
+- Validate the Terraform configuration by running the following command:
 **_terraform validate_**
 
--Preview the infrastructure changes that Terraform will apply by running the following command:
+- Preview the infrastructure changes that Terraform will apply by running the following command:
 **_terraform plan_**
 
--Deploy the AVD platform by running the following command:
+- Deploy the AVD platform by running the following command:
 **_terraform apply_**
 
 Review the planned changes and type yes when prompted to confirm the deployment.
@@ -54,7 +54,7 @@ Sit back and relax while Terraform provisions the AVD platform. The deployment m
 
 After the deployment completes successfully, Terraform will display the output variables that provide important information about the deployed resources.
 
--To remove the AVD platform and associated resources, you can use Terraform to destroy the infrastructure. Run the following command:
+- To remove the AVD platform and associated resources, you can use Terraform to destroy the infrastructure. Run the following command:
 **_terraform destroy_**
 
 Review the planned changes and type yes when prompted to confirm the destruction.
