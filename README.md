@@ -66,18 +66,18 @@ Review the planned changes and type yes when prompted to confirm the destruction
 Note: Be cautious when using the terraform destroy command as it will delete all the resources created during the deployment.
 
 ## Prerequisites for CI/CD deployment
-- Create an Azure Service Principal:
+- Create an Azure Service Principal:<br>
 **az ad sp create-for-rbac --name "TerraformSPN" --role Contributor --scopes /subscriptions/ --sdk-auth**
 
-- Create an Azure Storage Account to store Terraform tfstate file:
-**az group create -g RG-TFSTO-DEV -l northeurope**
-**az storage account create -n azstotf2021 -g RG-TFSTO-DEV -l northeurope --sku Standard_LRS**
+- Create an Azure Storage Account to store Terraform tfstate file:<br>
+**az group create -g RG-TFSTO-DEV -l northeurope**<br>
+**az storage account create -n azstotf2021 -g RG-TFSTO-DEV -l northeurope --sku Standard_LRS**<br>
 **az storage container create -n terraform-state --account-name azstotf2021**
 
-- Create GitHub Secrets to securely pass SPN secrets and Azure information:
-**ARM_CLIENT_ID: ${{secrets.SPN_ID}}**
-**ARM_CLIENT_SECRET: ${{secrets.SPN_PWD}}**
-**ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTIONID}}**
+- Create GitHub Secrets to securely pass SPN secrets and Azure information:<br>
+**ARM_CLIENT_ID: ${{secrets.SPN_ID}}**<br>
+**ARM_CLIENT_SECRET: ${{secrets.SPN_PWD}}**<br>
+**ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTIONID}}**<br>
 **ARM_TENANT_ID: ${{secrets.AZURE_TENANTID}}**
 
 ## Contributing
