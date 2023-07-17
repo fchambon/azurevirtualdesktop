@@ -13,3 +13,11 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "RG-INFRA-MGMT-WE"
+    storage_account_name = "azstotf2023"
+    container_name       = "terraform-state"
+    key                  = "terraform.tfstate"
+  }
