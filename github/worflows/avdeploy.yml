@@ -1,0 +1,35 @@
+name: AVD Deployment using Terraform
+
+on: workflow_dispatch
+
+defaults:
+  run:
+    working-directory: ./terraform
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    
+    env:
+      ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
+      ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
+      ARM_SUBSCRIPTION_ID: ${{secrets.AZ_SUBID}}
+      ARM_TENANT_ID: ${{secrets.AZ_TENANTID}}
+  
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        
+      - name: List directory
+        run: ls -a
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+        
+    #  - name: Terraform Apply
+    #    run: terraform apply -auto-approve

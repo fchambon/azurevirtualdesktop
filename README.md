@@ -22,7 +22,7 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 - **Compute Gallery**: Creates a Compute Gallery with a Windows 11 multisession 365 Apps image definition
 
-## Prerequisites
+## Prerequisites for interactive deployment
 To use this Terraform code and deploy the AVD platform, ensure you have the following:
 
 Azure subscription: Create an Azure subscription if you don't have one already.
@@ -64,6 +64,21 @@ After the deployment completes successfully, Terraform will display the output v
 Review the planned changes and type yes when prompted to confirm the destruction.
 
 Note: Be cautious when using the terraform destroy command as it will delete all the resources created during the deployment.
+
+## Prerequisites for CI/CD deployment
+- Create an Azure Service Principal:
+**az ad sp create-for-rbac --name "TerraformSPN" --role Contributor --scopes /subscriptions/ --sdk-auth**
+
+- Create an Azure Storage Account to store Terraform tfstate file:
+**az group create -g RG-TFSTO-DEV -l northeurope**
+**az storage account create -n azstotf2021 -g RG-TFSTO-DEV -l northeurope --sku Standard_LRS**
+**az storage container create -n terraform-state --account-name azstotf2021**
+
+- Create GitHub Secrets to securely pass SPN secrets and Azure information:
+**ARM_CLIENT_ID: ${{secrets.SPN_ID}}**
+**ARM_CLIENT_SECRET: ${{secrets.SPN_PWD}}**
+**ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTIONID}}**
+**ARM_TENANT_ID: ${{secrets.AZURE_TENANTID}}**
 
 ## Contributing
 Contributions to this repository are welcome! If you find any issues or have suggestions for improvements, please submit an issue or a pull request.
