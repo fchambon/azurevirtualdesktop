@@ -21,6 +21,14 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
+
+      - name: Cache Terraform modules
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/terraform/.terraform
+          key: ${{ runner.os }}-terraform-${{ hashFiles('**/main.tf') }}
+          restore-keys: |
+            ${{ runner.os }}-terraform-  
         
       - name: List directory
         run: ls -a
@@ -31,5 +39,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
         
-    #  - name: Terraform Apply
-    #    run: terraform apply -auto-approve
+    # - name: Terraform Apply
+    #   if: github.ref == 'refs/heads/main' && github.event_name == 'push' The terraform apply step is conditional (if) and only runs when the workflow is triggered by a push event on the main branch
+    #   run: terraform apply -auto-approve
