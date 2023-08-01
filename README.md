@@ -14,13 +14,17 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 - **VNET Peering**: Provides an option to peer the dedicated VNET with an existing hub, enabling connectivity with other resources in your network.
 
-- **Storage**: Creates an Azure File Share to host FSlogix user profils with the proper RBAC permissions
+- **Storage**: Creates an Azure File Share to host FSlogix user profiles with the proper RBAC permissions
 
 - **KeyVault**: Sets up a KeyVault to securely store and manage the local administrator password for the AVD virtual machines.
 
 - **Log Analytics Workspace**: Creates a Log Analytics workspace allowing you to collect and analyze logs from your AVD environment.
 
 - **Compute Gallery**: Creates a Compute Gallery with a Windows 11 multisession 365 Apps image definition
+
+## Architecture
+
+![Alt text]
 
 ## Prerequisites for interactive deployment
 To use this Terraform code and deploy the AVD platform, ensure you have the following:
