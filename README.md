@@ -24,7 +24,7 @@ This repository contains Terraform code to deploy a complete Azure Virtual Deskt
 
 ## Architecture
 
-![Alt text]
+![Architecture](assets/AVDTF.png)
 
 ## Prerequisites for interactive deployment
 To use this Terraform code and deploy the AVD platform, ensure you have the following:
